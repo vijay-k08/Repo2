@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript-4</title>
+</head>
+<body>
+    <button onclick="myFunction()">Show Date</button>
+    <p id="i"></p>
+    <script>
+        function myFunction() {
+            const date = new Date();
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            var str = date.getDate()+'/'+months[date.getMonth()]+'/'+date.getFullYear();
+            document.getElementById('i').innerHTML=str
+        }
+    </script>
+    <button type="button" onclick="document.getElementById('dtb').innerHTML=Date()">Show Time</button>
+    <p id="dtb"></p>
+</body>
+</html>

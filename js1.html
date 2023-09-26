@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript-1</title>
+</head>
+<body>
+    <script>
+        function revnum(n,rev=0) {
+            if(n===0) {
+                return rev;
+            }
+            return revnum(Math.floor(n/10),rev*10+n%10);
+        }
+        const n = 42516;
+        const res = revnum(n);
+        console.log(res);
+    </script>
+</body>
+</html>

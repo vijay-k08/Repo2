@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #img {
+      position: relative;
+      left: 0;
+      transition: left 0.5s ease;
+    }
+  </style>
+  <title>Javascript-7</title>
+</head>
+<body>
+  <img id="img" src="train.png" alt="Train"><br>
+  <h1 style="color: rgb(5, 5, 143); display: flex;justify-content: center; align-items: center;">
+    Click the following buttons to handle animations
+  </h1>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button style="margin-right: 2px;" onclick="starta()">Start</button>
+    <button onclick="stopa()">Stop</button>
+  </div>
+  <br>
+  
+  <script>
+    let id;
+    let position = 0;
+    const step = 4; 
+    function starta() {
+      id = requestAnimationFrame(moveForward);
+    }
+    
+    function moveForward() {
+      position += step;
+      document.getElementById('img').style.left = position + 'px';
+      
+      if (position < window.innerWidth - document.getElementById('img').width) {
+        id = requestAnimationFrame(moveForward);
+      } else {
+        cancelAnimationFrame(id);
+        id = requestAnimationFrame(moveBackward);
+      }
+    }
+    function moveBackward() {
+      position -= step;
+      document.getElementById('img').style.left = position + 'px';
+      
+      if (position > 0) {
+        id = requestAnimationFrame(moveBackward);
+      } else {
+        cancelAnimationFrame(id);
+        id = requestAnimationFrame(moveForward);
+      }
+    }
+    function stopa() {
+      cancelAnimationFrame(id);
+    }
+  </script>
+</body>
+</html>
+

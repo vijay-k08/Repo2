@@ -1,0 +1,413 @@
+<html>
+<head>
+    <title>JavaScript-8</title>
+</head>
+<script>
+    function matchpassword(){
+        var password = document.getElementById("password").value;
+        var repassword = document.getElementById("repassword").value;
+        if((password != repassword)){
+            alert("passwords didnot match");
+        }else{    
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        // Function to check if a string contains only alphabetic characters
+        function isAlphabetic(inputValue) {
+            var alphabetRegex = /^[A-Za-z]+$/;
+            return alphabetRegex.test(inputValue);
+        }
+
+        // Function to check if the name has at least 6 letters
+        function isNameValid(inputValue) {
+            return inputValue.length >= 6;
+        }
+
+        // Function to check if the phone number contains only digits
+        function isPhoneNumberValid(inputValue) {
+            var phoneRegex = /^\d+$/;
+            return phoneRegex.test(inputValue);
+        }
+
+        // Function to check if the age is a valid number
+        function isAgeValid(inputValue) {
+            var age = parseInt(inputValue, 10);
+            return !isNaN(age) && age >= 18; // Assuming 18 is the minimum valid age
+        }
+
+        // First Name must contain only alphabetic characters and have at least 6 letters
+        var firstName = document.getElementById('firstname');
+        firstName.addEventListener('input', function() {
+            var input = this;
+            var inputValue = input.value;
+            var isAlpha = isAlphabetic(inputValue);
+            var isValidLength = isNameValid(inputValue);
+
+            if (isAlpha && isValidLength) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                input.nextElementSibling.style.display = "none"; // Hide the "poor" message
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                input.nextElementSibling.style.display = "inline"; // Show the "poor" message
+            }
+        });
+
+        // Last Name validation (similar to First Name)
+        var lastname = document.getElementById('lastname');
+        lastname.addEventListener('input', function() {
+            var input = this;
+            var inputValue = input.value;
+            var isAlpha = isAlphabetic(inputValue);
+            var isValidLength = isNameValid(inputValue);
+
+            if (isAlpha && isValidLength) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                input.nextElementSibling.style.display = "none"; // Hide the "poor" message
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                input.nextElementSibling.style.display = "inline"; // Show the "poor" message
+            }
+        });
+
+        var address = document.getElementById('address');
+        address.addEventListener('input', function() {
+            var input = this;
+            var inputValue = input.value;
+            var isAlpha = isAlphabetic(inputValue);
+            var isValidLength = isNameValid(inputValue);
+
+            if (isAlpha && isValidLength) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                input.nextElementSibling.style.display = "none"; // Hide the "poor" message
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                input.nextElementSibling.style.display = "inline"; // Show the "poor" message
+            }
+        });
+
+        var state = document.getElementById('state');
+        state.addEventListener('input', function() {
+            var input = this;
+            var inputValue = input.value;
+            var isAlpha = isAlphabetic(inputValue);
+            var isValidLength = isNameValid(inputValue);
+
+            if (isAlpha && isValidLength) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                input.nextElementSibling.style.display = "none"; // Hide the "poor" message
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                input.nextElementSibling.style.display = "inline"; // Show the "poor" message
+            }
+        });
+
+        // Function to validate an email address
+        function isEmailValid(inputValue) {
+            var emailRegex = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+            return emailRegex.test(inputValue);
+        }
+
+        // Function to check if a password has at least 8 characters
+        function isPasswordValid(inputValue) {
+            return inputValue.length >= 8;
+        }
+
+        // Email must be a valid email address
+        var email = document.getElementById('email');
+        email.addEventListener('input', function() {
+            var input = this;
+            var inputValue = input.value;
+            var isValid = isEmailValid(inputValue);
+
+            if (isValid) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                input.nextElementSibling.style.display = "none"; // Hide the "invalid" message
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                input.nextElementSibling.style.display = "inline"; // Show the "invalid" message
+            }
+        });
+
+        // Password must have at least 8 characters
+        var password = document.getElementById('password');
+        password.addEventListener('input', function() {
+            var input = this;
+            var inputValue = input.value;
+            var isValid = isPasswordValid(inputValue);
+
+            if (isValid) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                input.nextElementSibling.style.display = "none"; // Hide the "invalid" message
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                input.nextElementSibling.style.display = "inline"; // Show the "invalid" message
+            }
+        });
+
+        var repassword = document.getElementById('repassword');
+        repassword.addEventListener('input', function() {
+            var input = this;
+            var inputValue = input.value;
+            var isValid = isPasswordValid(inputValue);
+
+            if (isValid) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                input.nextElementSibling.style.display = "none"; // Hide the "invalid" message
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                input.nextElementSibling.style.display = "inline"; // Show the "invalid" message
+            }
+        });
+
+
+        // Phone Number must contain only digits
+        var phoneNumber = document.getElementById('phonenumber');
+        phoneNumber.addEventListener('input', function() {
+            var input = this;
+            var inputValue = input.value;
+            var isValid = isPhoneNumberValid(inputValue);
+
+            if (isValid) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                input.nextElementSibling.style.display = "none"; // Hide the "poor" message
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                input.nextElementSibling.style.display = "inline"; // Show the "poor" message
+            }
+        });
+
+        // Age must be a valid number and at least 18
+        var ageInput = document.getElementById('age');
+        ageInput.addEventListener('input', function() {
+            var input = this;
+            var inputValue = input.value;
+            var isValid = isAgeValid(inputValue);
+
+            if (isValid) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+                input.nextElementSibling.style.display = "none"; // Hide the "poor" message
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+                input.nextElementSibling.style.display = "inline"; // Show the "poor" message
+            }
+        });
+
+        // Function to check if a text field is not empty
+        function isTextFieldNotEmpty(inputValue) {
+            return inputValue.trim() !== ''; // Check if it's not empty after trimming whitespace
+        }
+
+        // Function to check if all form fields are valid
+        function isFormValid() {
+            var formElements = document.querySelectorAll("#registration-form input");
+            for (var i = 0; i < formElements.length; i++) {
+                var element = formElements[i];
+                if (element.type === "text" && !isTextFieldNotEmpty(element.value)) {
+                    return false; // Return false if any text field is empty
+                }
+                if (element.classList.contains("invalid")) {
+                    return false; // Return false if any field is invalid
+                }
+            }
+            return true; // All fields are valid and not empty
+        }
+
+        // Submit button click event
+        var submitButton = document.getElementById('register');
+        submitButton.addEventListener('click', function(event) {
+            if (!isFormValid()) {
+                event.preventDefault(); // Prevent form submission if not all fields are valid
+                alert("Please fill in all fields correctly before submitting.");
+            }
+        });
+    });
+</script>
+<style>
+    .center{
+        justify-content: center;
+        display: flex;
+        padding: 30px;
+    }
+    .button {
+        justify-content: center;
+        display: flex;
+    }
+    .button input[type="submit"] {
+        border-radius: 30%;
+        padding: 5px 20px;
+        background-color: rgb(255, 0, 0); 
+        color: white; 
+        font-weight: bold;
+        cursor: pointer; 
+    }
+    label{
+        font-weight: bold;
+    }
+    caption{
+        font-size: 40px;
+        color: blue;
+        font-weight: bold;
+    }
+    .margin{
+        text-align: right;
+    }
+    form{
+        background: linear-gradient(to bottom,rgb(228, 222, 182), violet);
+        padding-right: 100px;
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    .error{
+	    display: none;
+	    margin-left: 10px;
+    }		
+
+    .error_show{
+	    color: red;
+	    margin-left: 10px;
+    }
+    input.invalid,
+    textarea.invalid{
+	    border: 2px solid red;
+    }
+
+    input.valid,
+    textarea.valid{
+	    border: 2px solid green;
+    }
+</style>
+<body>
+    <div class="colour">
+        <div class="center">
+            <form id="registration-form">   
+                <table>
+                    <caption>Registration form</caption>
+                    <tr>
+                        <td><label for="firstname">First Name:</label></td>
+                        <td>
+                            <input type="text" size="70" name="firstname" id="firstname">
+                            <span class="error" style="color: red; display: none;">poor</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="lastname">Last Name:</label></td>
+                        <td>
+                            <input type="text" size="70" name="lastname" id="lastname">
+                            <span class="error" style="color: red; display: none;">poor</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td >
+                            <input type="email" size="70"name="email" id="email">
+                            <span class="error" style="color: red; display: none;">poor</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td>
+                            <input type="password" size="70" id="password" name="password">
+                            <span class="error" style="color: red; display: none;">poor</span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="repassword">Re-enter Password:</label></td>
+                        <td>
+                            <input type="password" size="70" id="repassword" name="repassword">
+                            <span class="error" style="color: red; display: none;">poor or mismatch</span></td>
+                    </tr>
+                    <tr> 
+                        <td rowspan="2"><label for="gender">Gender:</labal></td>
+                        <td>
+                            <input type="radio" name="gender">Male</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="gender">Female</td>
+                    </tr>
+                    <tr>
+                        <td><label for="age">Age:</label></td>
+                        <td>
+                            <input type="text" size="70" name="age" id="age">
+                            <span class="error" style="color: red; display: none;">poor</span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phonenumber">PhoneNumber:</label></td>
+                        <td>
+                            <input type="text" size="70" name="phonenumber" id="phonenumber">
+                            <span class="error" style="color: red; display: none;">poor</span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td>
+                            <textarea rows="4" cols="66" name="address" id="address"></textarea>
+                            <span class="error" style="color: red; display: none;">poor</span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="state">State:</label></td>
+                        <td>
+                            <input type="text" size="70" name="state" id="state">
+                            <span class="error" style="color: red; display: none;">poor</span></td>
+                    </tr>
+                    <tr>
+                        <td><label>Country:</label></td>
+                        <td>
+                            <select>
+                                <option>Choose your country</option>
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>UK</option>
+                                <option>NewZealand</option>
+                                <option>South Africa</option>
+                                <option>Bangladesh</option>
+                                <option>Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Languages known</label></td>
+                        <td>
+                            <input type="checkbox">English
+                            <input type="checkbox">Telugu
+                            <input type="checkbox">Hindi
+                            <input type="checkbox">Kannada
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox">Hereby I declare all the given details are true
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="margin"> 
+                            Log in to <a href="https://careers.ethnus.com/candidateportal?register=true">ethnus</a> website
+                        </td>
+                    </tr>
+                </table>
+            <div class="button">
+            <input type="submit" value="Register" id="register" onclick="matchpassword();isFormValid();">
+        </div>
+    </form>
+    </div>   
+    </div>
+    </body>
+</html>
